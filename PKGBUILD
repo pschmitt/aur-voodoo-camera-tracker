@@ -17,6 +17,6 @@ package() {
     mkdir -p ${pkgdir}/opt ${pkgdir}/usr/bin
     mv ${srcdir}/voodoo-x86Linux-${_pkgver}/ ${pkgdir}/opt/voodoo
     # Launcher script
-    echo -e "#!/bin/sh\nLD_LIBRARY_PATH=/opt/voodoo/bin:/usr/lib32 /opt/voodoo/bin/voodoo" > ${srcdir}/voodoo
+    echo -e "#!/bin/sh\nLD_LIBRARY_PATH=/opt/voodoo/bin:/usr/lib32 /opt/voodoo/bin/voodoo $*" > ${srcdir}/voodoo
     install -Dm 0755 ${srcdir}/voodoo ${pkgdir}/usr/bin
 }
